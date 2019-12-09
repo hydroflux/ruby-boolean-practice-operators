@@ -1,51 +1,73 @@
 # Booleans and Comparisons
 
-## Objectives
+## Learning Goals
 
-1. Review the concept of boolean values.
-2. Use boolean operators and identify their return values.
-3. Use comparison operators and identify their return values.
+- Review the concept of boolean values.
+- Use boolean operators and identify their return values.
+- Use comparison operators and identify their return values.
 
 ## Booleans
 
-We've already learned a bit about the boolean (true-or-false) data type. In Ruby, a boolean refers to a value of either `true` or `false`, both of which are defined as their very own data types. Every appearance, or instance, of `true` in a Ruby program is an instance of `TrueClass`, while every appearance of `false` is an instance of `FalseClass`.
+We've already learned a bit about the boolean (true-or-false) data type. In
+Ruby, a boolean refers to a value of either `true` or `false`, both of which are
+defined as their very own data types. Every appearance, or instance, of `true`
+in a Ruby program is an instance of `TrueClass`, while every appearance of
+`false` is an instance of `FalseClass`.
 
-For now, we don't need to understand the concept of classes in depth. Just know that classes serve as templates for Ruby objects. Think of `TrueClass` and `FalseClass` like cookie cutters––there is a `TrueClass` cookie cutter and a `FalseClass` cookie cutter and every appearance of `true` or `false` is like a cookie made with its respective cookie cutter.
+For now, we don't need to understand the concept of classes in depth. Just know
+that classes serve as templates for Ruby objects. Think of `TrueClass` and
+`FalseClass` like cookie cutters––there is a `TrueClass` cookie cutter and a
+`FalseClass` cookie cutter and every appearance of `true` or `false` is like a
+cookie made with its respective cookie cutter.
 
 ## Boolean Operators
 
-How do we create boolean values in a Ruby program? Well, you can actually type `true` or `false` *or* we can write statements that *return* `true` or `false`. Now that we understand the concept of "truthiness"—that certain types of data are "truthy" and certain others are "falsey"—we can understand how to write such statements.
+How do we create boolean values in a Ruby program? Well, you can actually type
+`true` or `false` *or* we can write statements that *return* `true` or `false`.
+Now that we understand the concept of "truthiness"—that certain types of data
+are "truthy" and certain others are "falsey"—we can understand how to write such
+statements.
 
-We already know that Strings are one type of data that are truthy. Drop into IRB and use `!!` (the "double-bang operator") to determine that the string `"hi"` is truthy:
+We already know that Strings are one type of data that are truthy. Drop into IRB
+and use `!!` (the "double-bang operator") to determine that the string `"hi"` is
+truthy:
 
 ```ruby
 !!"hi" #=> true
 ```
 
-*Note:* You may see a warning regarding String literals when you run the above code. Ignore it! Ruby is just reminding us that it is a little strange to use the literal string `"hi"` in a statement, instead of saving it to a variable first. For example:
+*Note:* You may see a warning regarding String literals when you run the above
+code. Ignore it! Ruby is just reminding us that it is a little strange to use
+the literal string `"hi"` in a statement, instead of saving it to a variable
+first. For example:
 
 ```ruby
 string = "hi"
 !!string #=> true
 ```
 
-We used the literal string in this example though to highlight the "truthy" nature of strings.
+We used the literal string in this example though to highlight the "truthy"
+nature of strings.
 
-In the next unit, we will learn how to use the native truthiness of data types like strings to write statements that return `true`.
+In the next unit, we will learn how to use the native truthiness of data types
+like strings to write statements that return `true`.
 
-First, we're going to learn how to use **boolean operators** to write statements that return `true` or `false`.
+First, we're going to learn how to use **boolean operators** to write statements
+that return `true` or `false`.
 
 ### What are Boolean Operators?
 
-Boolean operators are really methods which means that they have return values. What do they return? `true` or `false` of course!
+Boolean operators are methods which means that they have return values. What do
+they return? `true` or `false` of course!
 
 In Ruby there are three main boolean operators:
 
-* `!` ("single-bang") which represents "NOT",
-* `&&` ("double-ampersand") which represents "AND", and
-* `||` ("double-pipe") which represents "OR".
+- `!` ("single-bang") which represents "NOT",
+- `&&` ("double-ampersand") which represents "AND", and
+- `||` ("double-pipe") which represents "OR".
 
-For an `&&` ("and") to evaluate to `true`, both values of either side of the symbol must evaluate to `true`. For example:
+For an `&&` ("and") to evaluate to `true`, both values of either side of the
+symbol must evaluate to `true`. For example:
 
 ```ruby
 true && true #=> true
@@ -53,13 +75,16 @@ true && true #=> true
 true && false #=> false
 ```
 
-For an `||` ("or") to evaluate to `true`, only one value on either side of the symbol must evaluate to `true`. For example:
+For an `||` ("or") to evaluate to `true`, only one value on either side of the
+symbol must evaluate to `true`. For example:
 
 ```ruby
 false || true #=> true
 ```
 
-Finally, a `!` ("not") reverses the logical state of its operand: if a condition is `true`, then `!` will make it `false`; if it is `false`, then `!` will make it `true`. For example:
+Finally, a `!` ("not") reverses the logical state of its operand: if a condition
+is `true`, then `!` will make it `false`; if it is `false`, then `!` will make
+it `true`. For example:
 
 ```ruby
 !true #=> false
@@ -69,7 +94,10 @@ Finally, a `!` ("not") reverses the logical state of its operand: if a condition
 
 ## Comparison Operators
 
-To check if two values are equal, we use the *comparison operator* represented with `==` ("double-equal-sign"). If two values are equal, then the statement will return `true`. If they are not equal, then it will return `false`. For example:
+To check if two values are equal, we use the *comparison operator* represented
+with `==` ("double-equal-sign"). If two values are equal, then the statement
+will return `true`. If they are not equal, then it will return `false`. For
+example:
 
 ```ruby
 1 == 1 #=> true
@@ -77,103 +105,21 @@ To check if two values are equal, we use the *comparison operator* represented w
 1 == 7 #=> false
 ```
 
-**Top-tip:** *The comparison operator* `==` *is distinct from the assignment operator* `=` *that is used to set a variable equal to a value. Mistaking these for each other is a common cause of unexpected behavior.*
-
-???
-
-# Let's Practice!
-
-?: `false && true`
-
-( )`true` (X)`false`
-
-?: `true && true`
-
-(X)`true` ( )`false`
-
-?: `"test" == "test"`
-
-(X)`true` ( )`false`
-
-?: `10 == 10 || 20 != 10`
-
-(X)`true` ( )`false`
-
-?: `10 == 10 && 20 == 10`
-
-( )`true` (X)`false`
-
-?: `true && 10 == 10`
-
-(X)`true` ( )`false`
-
-?: `true || 10 == 10`
-
-(X)`true` ( )`false`
-
-?: `false && 10 != 10`
-
-( )`true` (X)`false`
-
-?: `"boolean" == "booleans"`
-
-( )`true` (X)`false`
-
-?: `"boolean" != "booleans"`
-
-(X)`true` ( )`false`
-
-?: `10 != 0 && 20 == 10`
-
-( )`true` (X)`false`
-
-?: `"boolean" == 1`
-
-( )`true` (X)`false`
-
-?: `!(true && false)`
-
-(X)`true` ( )`false`
-
-?: `!(1000 == 1 || 10000 == 10000)`
-
-( )`true` (X)`false`
-
-?: `!(10 == 10 && 20 != 10)`
-
-( )`true` (X)`false`
-
-?: `!(1 != 100 || 30 == 40)`
-
-( )`true` (X)`false`
-
-?: `!("boolean" == "booleans" && "Code" == "Fun")`
-
-(X)`true` ( )`false`
-
-?: `1 == 1 && (!("boolean" == 1 || 1 == 0))`
-
-(X)`true` ( )`false`
-
-?: `"strong" == "coffee" && (!(30 == 40 || 30 == 30))`
-
-( )`true` (X)`false`
-
-?: `30 == 30 && (!("boolean" == "booleans" || "Coding" == "Awesome"))`
-
-(X)`true` ( )`false`
-
-???
+**Top-tip:** *The comparison operator* `==` *is distinct from the assignment
+operator* `=` *that is used to set a variable equal to a value. Mistaking these
+for each other is a common cause of unexpected behavior.*
 
 ## More Comparison Operators
 
-Ruby is good at comparing things. For instance, it knows that `14` is larger than `3`. Let's see that in action.
+Ruby is good at comparing things. For instance, it knows that `14` is larger
+than `3`. Let's see that in action.
 
 ```rb
 14 > 3 #=> true
 ```
 
-Here, `14` is larger than `3`, so Ruby evaluates this to `true`. Comparisons in Ruby always evaluate to `true` or `false`.
+Here, `14` is larger than `3`, so Ruby evaluates this to `true`. Comparisons in
+Ruby always evaluate to `true` or `false`.
 
 The commonly used comparison operators are:
 
@@ -220,7 +166,5 @@ ducklings.class == easter_eggs.class #=> true
 ```
 
 Comparison operators are essential to developing logical flow.
-
-<p data-visibility='hidden'>View <a href='https://learn.co/lessons/booleans-ruby-readme' title='Booleans and Comparisons'>Booleans and Comparisons</a> on Learn.co and start learning to code for free.</p>
 
 <p data-visibility='hidden'>View <a href='https://learn.co/lessons/booleans-ruby-readme'>Booleans</a> on Learn.co and start learning to code for free.</p>
